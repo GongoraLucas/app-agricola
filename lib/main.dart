@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'viewmodels/agricola_viewmodel.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => AgricolaViewModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,11 +20,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'App Agricola',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.green)),
       initialRoute: '/',
       routes: {
+        
         '/': (context) => const Placeholder(),
-        '/inicio': (context) => const Placeholder(),
         '/principal': (context) => const Placeholder(),
         '/detalle': (context) => const Placeholder(),
       },

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'viewmodels/agricola_viewmodel.dart';
+import 'vistas/pantallas/inicio_pantalla.dart';
+import 'vistas/pantallas/principal_pantalla.dart';
+import 'vistas/pantallas/detaller_pantalla.dart';
 
 void main() {
   runApp(
@@ -23,10 +26,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.green)),
       initialRoute: '/',
       routes: {
-        
-        '/': (context) => const Placeholder(),
-        '/principal': (context) => const Placeholder(),
-        '/detalle': (context) => const Placeholder(),
+        '/': (context) => const InicioPantalla(),
+        '/principal': (context) => const PrincipalPantalla(),
+        '/detalle': (context) => const DetallePantalla(),
       },
     );
   }
